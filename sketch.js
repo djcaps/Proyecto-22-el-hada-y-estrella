@@ -13,7 +13,7 @@ function preload()
 	starImg = loadImage("images/star.png");
 	bgImg = loadImage("images/starNight.png");
 	//carga aquí la animación del hada
-	hadaImg = loadImage("images/fairyImage1.png","images/fairyImage2.png");
+	hadaImg = loadAnimation("images/fairyImage1.png","images/fairyImage2.png");
 	fairyVoice = loadSound("sound/JoyMusic.mp3");
 }
 
@@ -23,8 +23,8 @@ function setup() {
 	//escribe el código para reproducir el sonido fairyVoice
    
 	//crea el sprite del hada, y agrega la animación para el hada
-    hada = createSprite(400,185);
-	hada.addImage(hadaImg);
+    hada = createSprite(400,510);
+	hada.addAnimation("hada",hadaImg);
 	hada.scale=0.2
 	//hada.playSound=hadaVoice;
 
@@ -70,14 +70,14 @@ function keyPressed() {
 	}
 
 	//escribe el código para mover al hada a la izquierda y derecha
-	if (keyDown==RIGHT_ARROW){
-		hada.x = hada.x+3;
-		hada.addImage(hadaImg)
+	if (keyCode==RIGHT_ARROW){
+		hada.x = hada.x+20;
+		hada.addAnimation("hada",hadaImg)
 	}
 	
-    if (keyDown==LEFT_ARROW){
-		hada.x = hada.x-3;
-		hada.addImage(hadaImg)
+    if (keyCode==LEFT_ARROW){
+		hada.x = hada.x-20;
+		hada.addAnimation("hada",hadaImg)
 	}
 
 }
